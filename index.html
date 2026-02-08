@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Only For You Chottusss ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(160deg, #ffe6ea, #fff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3a3a3a;
+    }
+
+    .container {
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    h1, h2 {
+      color: #e63946;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .soft {
+      font-style: italic;
+      color: #6c757d;
+    }
+
+    input {
+      margin-top: 15px;
+      padding: 12px;
+      width: 85%;
+      border-radius: 15px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      border-radius: 25px;
+      border: none;
+      background: #e63946;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d62839;
+    }
+
+    .letter, .valentine, .yes-message {
+      display: none;
+      margin-top: 25px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1d3557;
+    }
+
+    .valentine {
+      text-align: center;
+    }
+
+    .yes-message {
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Hey My Love ❤️</h1>
+
+  <p class="soft">
+    Before you read what’s in my heart,  
+    there’s something tiny you need to unlock…
+  </p>
+
+  <p><strong>
+    How much do u love meee ?
+  </strong></p>
+
+  <input type="text" id="answer" placeholder="Type your answer gently 💕">
+
+  <button onclick="unlockLove()">Unlock My Heart 💌</button>
+
+  <div class="letter" id="loveLetter">
+    <p>
+      From the moment you came into my life,  
+      everything started feeling warmer… softer… brighter.
+    </p>
+
+    <p>
+      You’re the thought that stays when the world goes quiet.  
+      The smile I don’t even realize I’m wearing.  
+      The calm in my chaos.
+    </p>
+
+    <p>
+      Loving you doesn’t feel loud or dramatic —  
+      it feels safe.  
+      It feels like home.
+    </p>
+
+    <p>
+      If I could wish on every dandelion in the world,  
+      every single one would carry the same wish:
+      <br><br>
+      <strong>to keep choosing you, every single day.</strong>
+    </p>
+
+    <button onclick="showValentine()">Continue ❤️</button>
+  </div>
+
+  <div class="valentine" id="valentineQuestion">
+    <h2>Will you be my Valentine? 💘</h2>
+    <button onclick="sayYes()">Yes, always ❤️</button>
+  </div>
+
+  <div class="yes-message" id="yesMessage">
+    <p>
+      You just made my heart smile in a way  
+      I don’t even have words for.
+    </p>
+
+    <p>
+      Thank you for choosing me,  
+      just like I choose you — always ❤️
+    </p>
+
+    <p><strong>Happy Valentine’s Day, my love 💖</strong></p>
+  </div>
+
+  <footer>
+    Made with all my heart 💕
+  </footer>
+</div>
+
+<script>
+  function unlockLove() {
+    const answer = document.getElementById("answer").value
+      .toLowerCase()
+      .trim();
+
+    if (answer === "forever") {
+      document.getElementById("loveLetter").style.display = "block";
+    } else {
+      alert("Close… try the simplest, sweetest answer 💕");
+    }
+  }
+
+  function showValentine() {
+    document.getElementById("valentineQuestion").style.display = "block";
+  }
+
+  function sayYes() {
+    document.getElementById("yesMessage").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
