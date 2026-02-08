@@ -1,184 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Only For You Chottusss ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>For You Chottuss ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(160deg, #ffe6ea, #fff);
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #3a3a3a;
-    }
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(160deg, #ffe6ec, #fff);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
-    .container {
-      background: white;
-      padding: 35px;
-      border-radius: 25px;
-      max-width: 420px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
+  .container {
+    background: white;
+    padding: 32px;
+    border-radius: 25px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+  }
 
-    h1, h2 {
-      color: #e63946;
-    }
+  h1, h2 {
+    color: #e63946;
+  }
 
-    p {
-      font-size: 16px;
-      line-height: 1.7;
-    }
+  p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
 
-    .soft {
-      font-style: italic;
-      color: #6c757d;
-    }
+  .name {
+    font-size: 20px;
+    color: #e63946;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: softAppear 2s forwards;
+  }
 
-    input {
-      margin-top: 15px;
-      padding: 12px;
-      width: 85%;
-      border-radius: 15px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      text-align: center;
-    }
+  input {
+    margin-top: 12px;
+    padding: 12px;
+    width: 85%;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    text-align: center;
+  }
 
-    button {
-      margin-top: 20px;
-      padding: 12px 30px;
-      border-radius: 25px;
-      border: none;
-      background: #e63946;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
+  button {
+    margin-top: 18px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #e63946;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+  }
 
-    button:hover {
-      background: #d62839;
-    }
+  button:hover {
+    background: #d62839;
+  }
 
-    .letter, .valentine, .yes-message {
-      display: none;
-      margin-top: 25px;
-      text-align: left;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #1d3557;
-    }
+  .section {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 1.2s ease forwards;
+  }
 
-    .valentine {
-      text-align: center;
-    }
+  .line {
+    margin: 10px 0;
+    min-height: 20px;
+  }
 
-    .yes-message {
-      text-align: center;
-    }
+  footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #aaa;
+  }
 
-    footer {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #999;
-    }
-  </style>
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes softAppear {
+    from { opacity: 0; letter-spacing: 4px; }
+    to { opacity: 1; letter-spacing: 1px; }
+  }
+
+  @keyframes hug {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .hug {
+    font-size: 18px;
+    color: #e63946;
+    animation: hug 2s infinite;
+  }
+
+  .heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 14px;
+    animation: float 6s linear infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) scale(1); }
+    100% { transform: translateY(-10vh) scale(1.4); }
+  }
+</style>
 </head>
+
 <body>
 
 <div class="container">
-  <h1>Hey My Love ❤️</h1>
+  <div class="name" id="name"></div>
 
-  <p class="soft">
-    Before you read what’s in my heart,  
-    there’s something tiny you need to unlock…
-  </p>
+  <h1>Hey You ❤️</h1>
 
-  <p><strong>
-    How much do u love meee ?
-  </strong></p>
+  <p>One tiny question first…</p>
+  <p><strong>how much i love u ?</strong></p>
 
-  <input type="text" id="answer" placeholder="Type your answer gently 💕">
+  <input id="answer" placeholder="Type gently 💕">
+  <button onclick="unlock()">Unlock 💌</button>
 
-  <button onclick="unlockLove()">Unlock My Heart 💌</button>
-
-  <div class="letter" id="loveLetter">
-    <p>
-      From the moment you came into my life,  
-      everything started feeling warmer… softer… brighter.
-    </p>
-
-    <p>
-      You’re the thought that stays when the world goes quiet.  
-      The smile I don’t even realize I’m wearing.  
-      The calm in my chaos.
-    </p>
-
-    <p>
-      Loving you doesn’t feel loud or dramatic —  
-      it feels safe.  
-      It feels like home.
-    </p>
-
-    <p>
-      If I could wish on every dandelion in the world,  
-      every single one would carry the same wish:
-      <br><br>
-      <strong>to keep choosing you, every single day.</strong>
-    </p>
+  <div class="section" id="letter">
+    <p class="line" id="l1"></p>
+    <p class="line" id="l2"></p>
+    <p class="line" id="l3"></p>
+    <p class="line" id="l4"></p>
 
     <button onclick="showValentine()">Continue ❤️</button>
   </div>
 
-  <div class="valentine" id="valentineQuestion">
+  <div class="section" id="valentine">
     <h2>Will you be my Valentine? 💘</h2>
-    <button onclick="sayYes()">Yes, always ❤️</button>
+    <button onclick="yes()">Yes ❤️</button>
   </div>
 
-  <div class="yes-message" id="yesMessage">
-    <p>
-      You just made my heart smile in a way  
-      I don’t even have words for.
-    </p>
-
-    <p>
-      Thank you for choosing me,  
-      just like I choose you — always ❤️
-    </p>
-
-    <p><strong>Happy Valentine’s Day, my love 💖</strong></p>
+  <div class="section" id="final">
+    <p class="hug">Come here… 🤍</p>
+    <p class="line">A tight hug.</p>
+    <p class="line">A soft kiss.</p>
+    <p class="line"><strong>You’re mine. Always.</strong></p>
   </div>
 
-  <footer>
-    Made with all my heart 💕
-  </footer>
+  <footer>Made just for you 💕</footer>
 </div>
 
 <script>
-  function unlockLove() {
-    const answer = document.getElementById("answer").value
-      .toLowerCase()
-      .trim();
+  // ✨ CHANGE HER NAME HERE ✨
+  const herName = "Chottusss";
 
-    if (answer === "forever") {
-      document.getElementById("loveLetter").style.display = "block";
+  document.getElementById("name").innerText = herName;
+
+  function unlock() {
+    const ans = document.getElementById("answer").value.toLowerCase().trim();
+    if (ans === "forever") {
+      document.getElementById("letter").style.display = "block";
+      typeLines();
     } else {
-      alert("Close… try the simplest, sweetest answer 💕");
+      alert("Almost… try the sweetest answer 💗");
     }
   }
 
-  function showValentine() {
-    document.getElementById("valentineQuestion").style.display = "block";
+  function typeText(element, text, delay = 50) {
+    let i = 0;
+    const interval = setInterval(() => {
+      element.innerHTML += text.charAt(i);
+      i++;
+      if (i >= text.length) clearInterval(interval);
+    }, delay);
   }
 
-  function sayYes() {
-    document.getElementById("yesMessage").style.display = "block";
+  function typeLines() {
+    typeText(document.getElementById("l1"), "You feel like peace.");
+    setTimeout(() => typeText(document.getElementById("l2"), "You feel like warmth."), 900);
+    setTimeout(() => typeText(document.getElementById("l3"), "You feel like my favorite place."), 1800);
+    setTimeout(() => typeText(document.getElementById("l4"), "With you, everything feels right."), 2800);
   }
+
+  function showValentine() {
+    document.getElementById("valentine").style.display = "block";
+  }
+
+  function yes() {
+    document.getElementById("final").style.display = "block";
+  }
+
+  // Floating hearts
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 700);
 </script>
 
 </body>
